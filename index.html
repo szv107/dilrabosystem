@@ -1137,7 +1137,7 @@ footer{padding:60px 0 calc(30px + env(safe-area-inset-bottom,0px));border-top:1p
   mnav.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ mnav.classList.remove('open'); burger.setAttribute('aria-expanded','false'); }); });
 
   /* ---------- our team: names live in the artifact db; only editors see the edit controls ---------- */
-  var CREW_DEFAULT = {};  // names for a standalone copy of the site, e.g. {t1:'Имя Фамилия'}
+  var CREW_DEFAULT = {"t1": "ГУЛАНДОМ катта директор ва офис рахбари", "t2": "НАФИСА-директор", "t3": "НАЗАРОВА НАФИСА -ДИРЕКТОР", "t4": "ШАХНОЗА-катта директор", "t5": "ГУЛЗОРА-кумуш директор ва офис рахбари", "t6": "ГУЛСАНАМ-директор", "t7": "ГУЛЬНОЗА-директор ва офис рахбари"};  // names shown on the public site (the preview keeps edits in its db)
   var CREW_TXT = {
     ru:{ph:'Имя и фамилия', saving:'Сохраняю…', saved:'Имена сохранены', fail:'Не удалось сохранить. Попробуйте ещё раз.'},
     uz:{ph:'Исм ва фамилия', saving:'Сақланмоқда…', saved:'Исмлар сақланди', fail:'Сақлаб бўлмади. Яна уриниб кўринг.'}
