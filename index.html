@@ -1,0 +1,1233 @@
+<!doctype html>
+<html lang="ru" data-mode="night">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dilrabo Academy</title>
+<meta name="description" content="Dilrabo Academy — обучение и наставничество для партнёров Faberlic. Биография, программа обучения, команда, компания и регистрация.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Dilrabo Academy">
+<meta property="og:title" content="Dilrabo Academy — Дилрабо Махматкулова">
+<meta property="og:description" content="Faberlic жамоаси учун таълим ва устозлик. Рўйхатдан ўтиш мутлақо текин!">
+<meta property="og:url" content="https://dilrabosystem.uz/">
+<meta property="og:image" content="https://dilrabosystem.uz/img2/company.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23111'/%3E%3Cpath d='M9 8h14l6 7-13 15L3 15z' fill='none' stroke='%23C9A34A' stroke-width='2'/%3E%3C/svg%3E">
+<script>
+document.documentElement.classList.add('js','preload');
+var m='night';try{m=localStorage.getItem('da-mode')==='day'?'day':'night'}catch(e){}document.documentElement.setAttribute('data-mode',m);
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: full-bleed photo stage with a giant condensed wordmark behind the cut-out figure,
+   a two-panel base (drawing | figures) that inverts between night and day, then sections in the same split-panel grammar */
+:root{
+  --ink:#0B0B0B;
+  --paper:#EEEDEB;
+  --bg:var(--ink);
+  --fg:#F1EFEB;
+  --muted:#8E8A85;
+  --line:rgba(255,255,255,.14);
+  --pa:var(--paper);   /* drawing panel */
+  --pa-fg:var(--ink);
+  --skf:none;          /* sketch filter */
+  --gold:#C9A34A;
+  --pad:clamp(16px,3vw,44px);
+  --display:"Oswald","Arial Narrow","Roboto Condensed",Impact,sans-serif;
+  --body:"Manrope",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --ease:cubic-bezier(.2,.8,.2,1);
+  color-scheme:dark;
+}
+:root[data-mode="day"]{
+  --bg:var(--paper);
+  --fg:var(--ink);
+  --muted:#6F6B66;
+  --line:rgba(0,0,0,.14);
+  --pa:var(--ink);
+  --pa-fg:#F1EFEB;
+  --skf:invert(1);
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 16px/1.6 var(--body);-webkit-font-smoothing:antialiased;transition:background-color .7s var(--ease),color .7s var(--ease)}
+.preload body{overflow:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit}
+h1,h2,h3,p{margin:0}
+:focus-visible{outline:2px solid currentColor;outline-offset:3px}
+.ico{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.wrap{max-width:1480px;margin:0 auto;padding-inline:var(--pad)}
+main,footer{overflow-x:clip}
+section{position:relative;scroll-margin-top:70px}
+
+/* ---------- header ---------- */
+.hdr{position:fixed;z-index:40;top:env(safe-area-inset-top,0px);left:0;right:0;padding:18px var(--pad);display:flex;align-items:center;gap:12px;pointer-events:none}
+.hdr>*{pointer-events:auto}
+.pill{display:flex;align-items:center;gap:2px;padding:5px;border-radius:999px;background:rgba(18,18,18,.38);border:1px solid rgba(255,255,255,.2);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);color:#fff;transition:background .4s}
+.pill a,.pill button{padding:8px 14px;border-radius:999px;font-size:14px;font-weight:500;border:0;background:transparent;cursor:pointer;transition:background .3s,color .3s;white-space:nowrap}
+.pill a:hover,.pill a.active{background:rgba(255,255,255,.16)}
+.brand{font:700 15px/1 var(--display)!important;letter-spacing:.06em;text-transform:uppercase;padding:9px 14px!important}
+.hdr .sp{flex:1}
+.lang button{padding:8px 11px;font-weight:700;font-size:13px;color:rgba(255,255,255,.6)}
+.lang button[aria-pressed="true"]{background:#fff;color:#000}
+.cta-pill a{display:flex;align-items:center;gap:8px}
+.burger-pill{display:none}
+.burger{width:40px;height:40px;padding:0!important;display:grid;place-items:center}
+.hdr.scrolled .pill{background:rgba(18,18,18,.66)}
+
+/* ---------- hero ---------- */
+.hero{height:100svh;min-height:620px;max-height:1080px;display:flex;flex-direction:column;background:var(--ink)}
+.stage{position:relative;flex:1 1 auto;overflow:hidden;isolation:isolate}
+.bd{position:absolute;inset:0;z-index:0}
+.bd i{position:absolute;inset:0;opacity:0;transition:opacity 1s var(--ease)}
+.bd i.on{opacity:1}
+.bd::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.28),transparent 30%,transparent 62%,rgba(0,0,0,.42))}
+.mega{position:absolute;z-index:1;left:var(--pad);right:var(--pad);top:clamp(70px,12%,130px);font:700 100px/.8 var(--display);text-transform:uppercase;color:#fff;white-space:nowrap;letter-spacing:-.005em;pointer-events:none;will-change:transform}
+.mega span{display:inline-block;transition:transform 1.1s var(--ease),opacity 1.1s var(--ease)}
+.mega .sp-ch{width:.22em}
+.figs{position:absolute;inset:0;z-index:2;pointer-events:none;will-change:transform}
+.fig{position:absolute;bottom:0;left:50%;height:100%;width:auto;max-width:none;transform:translateX(-50%) translateX(var(--fx,0px));opacity:0;transition:opacity .9s var(--ease),transform 1.1s var(--ease),filter .9s}
+.fig.on{opacity:1}
+:root[data-mode="night"] .fig.dim{filter:brightness(.78) saturate(.9)}
+.hero-p{position:absolute;z-index:3;left:var(--pad);bottom:26px;max-width:36ch;color:#fff;font-size:15px;line-height:1.45;text-shadow:0 1px 12px rgba(0,0,0,.35);transition:opacity .4s,transform .4s var(--ease)}
+.hero-p.swap{opacity:0;transform:translateY(8px)}
+
+.ctrl{position:absolute;z-index:3;right:var(--pad);bottom:22px;display:flex;gap:8px}
+.round{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;border:1px solid rgba(255,255,255,.4);background:rgba(255,255,255,.08);color:#fff;cursor:pointer;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:background .3s,color .3s,transform .3s}
+.round:hover{transform:scale(1.06)}
+.round.solid{background:#fff;color:#000;border-color:#fff}
+.mode .sun{display:none}
+:root[data-mode="day"] .mode .sun{display:block}
+:root[data-mode="day"] .mode .moon{display:none}
+.loadbar{position:absolute;z-index:5;left:var(--pad);right:var(--pad);bottom:34px;display:flex;align-items:center;gap:22px;color:#fff;transition:opacity .5s}
+.loadbar b{flex:1;height:2px;background:rgba(255,255,255,.25);position:relative;overflow:hidden}
+.loadbar b::after{content:"";position:absolute;inset:0;background:#fff;transform-origin:left;transform:scaleX(var(--lp,0))}
+.loadbar span{font:500 20px/1 var(--display);min-width:3.2em;text-align:right;font-variant-numeric:tabular-nums}
+
+.panels{height:clamp(220px,34%,330px);display:grid;grid-template-columns:42% 58%;transition:height 1.2s var(--ease)}
+.p-sketch{position:relative;background:var(--pa);overflow:hidden;transition:background-color .8s var(--ease)}
+.p-sketch img{position:absolute;inset:-4% 0 0 0;width:100%;height:108%;object-fit:cover;object-position:50% 30%;filter:var(--skf);opacity:0;transition:opacity .9s var(--ease),filter .8s var(--ease),transform 6s linear;transform:scale(1.05)}
+.p-sketch img.on{opacity:1;transform:scale(1)}
+:root[data-mode="night"] .p-sketch img{mix-blend-mode:multiply}
+:root[data-mode="day"] .p-sketch img{mix-blend-mode:screen}
+.p-stats{background:var(--bg);color:var(--fg);padding:28px var(--pad) 22px clamp(20px,3vw,44px);display:flex;flex-direction:column;justify-content:space-between;gap:18px;transition:background-color .8s var(--ease),color .8s var(--ease)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.st small{display:flex;align-items:center;gap:8px;font-size:14px;opacity:.85}
+.st small .ico{width:16px;height:16px}
+.st b{display:block;margin-top:8px;font:600 clamp(26px,3.3vw,52px)/1 var(--display);text-transform:uppercase;letter-spacing:-.005em;white-space:nowrap;font-variant-numeric:tabular-nums}
+.p-foot{display:flex;align-items:flex-end;justify-content:space-between;gap:16px}
+.arrows{display:flex;gap:8px;align-items:center}
+.arr{width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:transparent;color:var(--fg);display:grid;place-items:center;cursor:pointer;transition:background .3s,color .3s,border-color .3s}
+.arr:hover{background:var(--fg);color:var(--bg)}
+.arr .ico{width:16px;height:16px}
+.counter{font:500 14px/1 var(--display);letter-spacing:.06em;color:var(--muted);margin-left:10px}
+.slide-label{display:flex;align-items:center;gap:14px;text-align:right;font-size:14px;line-height:1.35}
+.slide-label>span{transition:opacity .4s}
+.slide-label>span.swap{opacity:0}
+.thumbs{display:flex}
+.thumb{width:62px;height:62px;border-radius:50%;overflow:hidden;border:2px solid var(--bg);position:relative;cursor:pointer;padding:0;transition:transform .4s var(--ease),border-color .8s;background:#333}
+.thumb+.thumb{margin-left:-16px}
+.thumb:hover{transform:translateY(-4px)}
+.thumb i{position:absolute;inset:0}
+.thumb img{position:absolute;left:50%;top:6%;height:190%;width:auto;max-width:none;transform:translateX(-50%)}
+
+/* preload + entrance */
+.js .mega span{transform:translateY(40%);opacity:0}
+.js .hdr{opacity:0;transform:translateY(-14px);transition:opacity .8s .5s,transform .8s .5s var(--ease)}
+.js .hero-p,.js .ctrl{opacity:0}
+.preload .panels{height:0}
+.preload .fig{transform:translateX(-50%) scale(1.06);transform-origin:50% 100%}
+.ready .mega span{transform:none;opacity:1}
+.ready .hdr{opacity:1;transform:none}
+.ready .hero-p,.ready .ctrl{opacity:1;animation:rise .9s .9s backwards}
+
+.ready .hero-p.swap{opacity:0}
+.ready .loadbar{opacity:0;pointer-events:none}
+@keyframes rise{from{opacity:0;transform:translateY(12px)}}
+
+/* ---------- shared section grammar ---------- */
+.sec{padding-block:clamp(80px,10vw,150px)}
+.tag{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.tag::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
+.big{font:700 clamp(46px,8.4vw,148px)/1.15 var(--display);text-transform:uppercase;letter-spacing:-.005em;text-wrap:balance}
+.mid{font:600 clamp(30px,3.6vw,56px)/1.1 var(--display);text-transform:uppercase}
+.sec-head{display:grid;grid-template-columns:1.25fr 1fr;gap:28px 60px;align-items:end;margin-bottom:clamp(40px,5vw,70px)}
+.sec-head .tag{grid-column:1/-1}
+.sec-head p{max-width:46ch;opacity:.82;font-size:17px}
+.split{display:grid;grid-template-columns:42fr 58fr;min-height:clamp(460px,48vw,640px)}
+.pane{position:relative;padding:clamp(24px,3.4vw,52px);min-width:0}
+.pane.dark{background:var(--pa);color:var(--pa-fg);transition:background-color .8s,color .8s}
+.pane.line{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.copy{display:grid;gap:22px;align-content:start}
+.copy p{max-width:58ch;opacity:.86}
+.rows{list-style:none;padding:0;margin:0;border-top:1px solid var(--line)}
+.rows li{display:flex;gap:16px;align-items:center;padding:16px 0;border-bottom:1px solid var(--line);font-weight:600}
+.rows li .ico{opacity:.7}
+.quote{font:500 clamp(24px,2.4vw,36px)/1.1 var(--display);text-transform:uppercase;letter-spacing:.005em;max-width:24ch}
+.btn{display:inline-flex;align-items:center;gap:12px;padding:16px 24px;border-radius:999px;font-weight:700;font-size:15px;border:1px solid var(--fg);background:var(--fg);color:var(--bg);cursor:pointer;transition:transform .35s var(--ease),background .35s,color .35s}
+.btn:hover{transform:translateY(-2px)}
+.btn .ico{transition:transform .35s var(--ease)}
+.btn:hover .ico:last-child{transform:translateX(3px)}
+
+/* sketch -> photo wipe */
+.wipe{position:relative;overflow:hidden;min-height:420px;padding:0}
+.wipe img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.wipe .sk{filter:var(--skf);transition:filter .8s}
+:root[data-mode="night"] .wipe .sk{mix-blend-mode:multiply}
+:root[data-mode="day"] .wipe .sk{mix-blend-mode:screen}
+.wipe .ph{clip-path:inset(0 0 calc((1 - var(--p,0)) * 100%) 0);will-change:clip-path}
+.wipe::after{content:"";position:absolute;left:0;right:0;top:calc(var(--p,0) * 100%);height:1px;background:var(--pa-fg);opacity:calc(1 - var(--p,0));pointer-events:none}
+.wipe .lbl{position:absolute;z-index:2;left:20px;bottom:18px;font:500 13px/1 var(--display);letter-spacing:.12em;text-transform:uppercase;padding:8px 12px;border-radius:999px;background:rgba(0,0,0,.5);color:#fff;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+
+/* three-column figure rows */
+.row3{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.row3>*{padding:clamp(22px,2.6vw,40px);display:grid;gap:14px;align-content:start;min-width:0}
+.row3>*+*{border-left:1px solid var(--line)}
+.row3 small{display:flex;align-items:center;gap:8px;font-size:14px;opacity:.85}
+.row3 .val{font:600 clamp(36px,4.4vw,72px)/.95 var(--display);text-transform:uppercase}
+.row3 p{opacity:.8;font-size:15px;max-width:40ch}
+.meter{height:2px;background:var(--line);position:relative;overflow:hidden;margin-top:6px}
+.meter::after{content:"";position:absolute;inset:0;background:var(--fg);transform-origin:left;transform:scaleX(0);transition:transform 1.4s .3s var(--ease)}
+.meter.in::after{transform:scaleX(var(--w))}
+
+/* certificate mock */
+.cert-pane{display:grid;place-items:end end;padding:clamp(16px,3vw,40px);overflow:hidden}
+.cert-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 35%;opacity:.5;filter:grayscale(1)}
+.certificate{position:relative;width:clamp(160px,38%,250px);aspect-ratio:1/1.41;background:#0E0F12;color:#E7E8EF;padding:14px;box-shadow:0 40px 80px -20px rgba(0,0,0,.7);text-align:center;rotate:-3deg;transition:rotate .8s var(--ease),scale .8s var(--ease)}
+.certificate:hover{rotate:0deg;scale:1.03}
+.certificate .in1{height:100%;border:1px solid var(--gold);padding:6px}
+.certificate .in2{height:100%;border:1px solid rgba(201,163,74,.55);display:grid;align-content:center;justify-items:center;gap:6px;padding:10px}
+.certificate svg{width:32px;height:32px;color:#fff}
+.certificate .t1{font:500 17px/1 var(--display);letter-spacing:.32em}
+.certificate .t2{font-size:8px;letter-spacing:.4em;color:#A6A9BD}
+.certificate .t3{font:italic 400 30px/1.1 Georgia,"Times New Roman",serif;color:var(--gold);margin:4px 0}
+.certificate .t4{font-size:9px;color:#BFC1D1}
+.certificate .t5{font:italic 14px/1.2 Georgia,serif;color:#E6C76E}
+.certificate .t6{font:600 12px/1 var(--display);color:#E6C76E;letter-spacing:.1em}
+
+/* depth blocks (wordmark behind a cut-out) */
+.depth{position:relative;height:clamp(520px,82vh,880px);overflow:hidden;isolation:isolate}
+.depth .bd i{opacity:1}
+.depth .word{position:absolute;z-index:1;left:var(--pad);right:var(--pad);text-align:center;top:clamp(50px,10%,110px);font:700 100px/1 var(--display);text-transform:uppercase;color:#fff;white-space:nowrap;will-change:transform}
+.depth .cut{position:absolute;z-index:2;bottom:0;left:50%;height:94%;width:auto;max-width:none;transform:translateX(-50%);will-change:transform}
+.depth .cut.card{height:86%;bottom:5%;aspect-ratio:3/2;max-width:calc(100% - 2*var(--pad));object-fit:cover;border-radius:22px;box-shadow:0 40px 90px -20px rgba(0,0,0,.65);filter:grayscale(1) contrast(1.08) brightness(.82)}
+#team .depth{height:clamp(600px,96vh,1000px)}
+#team .depth .word{z-index:3;text-shadow:0 6px 40px rgba(0,0,0,.35)}
+.depth .cap{position:absolute;z-index:3;left:var(--pad);bottom:24px;color:#fff;max-width:34ch;font-size:15px;line-height:1.45;text-shadow:0 1px 12px rgba(0,0,0,.35)}
+.depth .cap b{display:block;font:600 22px/1.1 var(--display);text-transform:uppercase;margin-bottom:6px;letter-spacing:.02em}
+.depth .corner{position:absolute;z-index:3;right:var(--pad);bottom:24px}
+
+/* marquee */
+.marquee{margin-top:clamp(50px,6vw,80px);overflow:hidden}
+.track{display:flex;gap:14px;width:max-content;animation:marquee 55s linear infinite;will-change:transform}
+.marquee:hover .track{animation-play-state:paused}
+.track img{height:clamp(220px,24vw,340px);aspect-ratio:2/3;width:auto;object-fit:cover;filter:grayscale(1) contrast(1.05);transition:filter .6s}
+.track img:hover{filter:none}
+@keyframes marquee{to{transform:translateX(calc(-50% - 7px))}}
+
+/* bio: facts in a column, then the author's story */
+.facts{margin:0;border-top:1px solid var(--line)}
+.facts>div{display:grid;grid-template-columns:minmax(110px,30%) minmax(0,1fr);gap:8px 24px;align-items:center;padding:18px 0;border-bottom:1px solid var(--line)}
+.facts dt{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+.facts dd{margin:0;font-size:18px;font-weight:600;line-height:1.35}
+.facts dd.name{font:600 clamp(26px,2.6vw,36px)/1 var(--display);text-transform:uppercase;letter-spacing:.02em}
+.facts dd.num{font:600 clamp(30px,3vw,44px)/1 var(--display);text-transform:uppercase}
+.chips{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.chips li{padding:8px 14px;border:1px solid var(--line);border-radius:999px;font-size:15px;line-height:1.2}
+.story{display:grid;grid-template-columns:5fr 7fr;gap:28px clamp(30px,5vw,90px);padding-top:clamp(70px,8vw,130px)}
+.story-head{display:grid;gap:18px;align-content:start;position:sticky;top:110px;align-self:start}
+.story-head .mid{max-width:14ch}
+.story-body{display:grid;gap:22px;max-width:62ch}
+.story-body p{font-size:18px;line-height:1.6;opacity:.86}
+.story-body .story-if{opacity:1;padding:4px 0 4px 22px;border-left:2px solid var(--gold);font-size:20px;line-height:1.5}
+.story-body .story-free{opacity:1;color:var(--gold);font:600 clamp(22px,2vw,28px)/1.2 var(--display);text-transform:uppercase;letter-spacing:.02em}
+.story-body .story-cta{opacity:1;font:600 clamp(22px,2vw,28px)/1.15 var(--display);text-transform:uppercase;letter-spacing:.02em}
+/* bio: who the academy is for */
+.who{padding-top:clamp(80px,9vw,150px)}
+.who-head{display:grid;gap:18px;margin-bottom:clamp(36px,4.5vw,64px)}
+.who-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(12px,1.4vw,18px)}
+.who-grid ol{display:contents}
+.who-grid li{list-style:none;display:grid;align-content:space-between;gap:28px;min-height:clamp(190px,16vw,240px);padding:clamp(20px,2vw,28px);border:1px solid var(--line);border-radius:28px}
+.who-grid .n{font:600 clamp(34px,3.2vw,52px)/1 var(--display);color:var(--gold)}
+.who-grid li p{font-size:18px;font-weight:600;line-height:1.35}
+.who-all{display:grid;align-content:space-between;gap:24px;padding:clamp(20px,2vw,28px);border:1px solid var(--gold);border-radius:28px;background:radial-gradient(120% 120% at 100% 0%,rgba(201,163,74,.2),rgba(201,163,74,0) 65%)}
+.who-all .ico{width:34px;height:34px;color:var(--gold)}
+.who-all p{font:600 clamp(20px,1.7vw,26px)/1.25 var(--display);text-transform:uppercase;letter-spacing:.02em}
+@supports (corner-shape:squircle){
+  .who-grid li,.who-all{border-radius:50px;corner-shape:squircle}
+}
+/* our team: head avatars with names, seminar video */
+.crew{padding-top:clamp(64px,7vw,110px)}
+.crew-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:18px 30px;margin-bottom:clamp(32px,4vw,56px)}
+.crew-head .mid{margin-top:14px;max-width:20ch;line-height:1.15}
+.crew-tools{display:flex;flex-wrap:wrap;gap:8px}
+.crew-tools[hidden],.crew-tools [hidden]{display:none}
+.btn.sm{padding:11px 18px;font-size:14px}
+.btn.ghost{background:transparent;color:var(--fg)}
+.crew-grid{--cols:4;--gx:clamp(14px,2.4vw,40px);list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(28px,3vw,46px) var(--gx)}
+.crew-grid li{width:calc((100% - (var(--cols) - 1)*var(--gx))/var(--cols));display:grid;justify-items:center;align-content:start;gap:14px;text-align:center;min-width:0}
+.ava{width:100%;max-width:184px;aspect-ratio:1;border-radius:50%;overflow:hidden;position:relative;background:radial-gradient(100% 100% at 50% 18%,#a8958f 0%,#6b5853 55%,#2a2321 100%);box-shadow:0 0 0 1px var(--line);transition:box-shadow .5s var(--ease)}
+:root[data-mode="day"] .ava{background:radial-gradient(100% 100% at 50% 18%,#f0c2a1 0%,#c89474 55%,#6b4a3a 100%)}
+.ava img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform-origin:50% 100%;transition:transform .8s var(--ease)}
+.crew-grid li:hover .ava{box-shadow:0 0 0 2px var(--gold)}
+.crew-grid li:hover .ava img{transform:scale(1.06)}
+.nm{font:600 18px/1.15 var(--display);text-transform:uppercase;letter-spacing:.03em;min-height:1.15em;overflow-wrap:anywhere}
+.nm-in{width:100%;max-width:184px;padding:10px 12px;border-radius:12px;border:1px solid var(--muted);background:transparent;color:var(--fg);font:500 15px/1.2 var(--body);text-align:center}
+.nm-in:focus{outline:2px solid var(--gold);outline-offset:1px;border-color:transparent}
+.crew-msg{min-height:1.4em;margin-top:22px;font-size:14px;color:var(--muted);text-align:right}
+.vid-pane{display:grid;place-items:center;padding:clamp(20px,3vw,44px)}
+.vid{position:relative;height:min(78vh,640px);aspect-ratio:9/16;max-width:100%;border-radius:18px;overflow:hidden;background:#000;box-shadow:0 40px 80px -24px rgba(0,0,0,.6)}
+.vid video{width:100%;height:100%;object-fit:cover;display:block}
+.vid .round{position:absolute;right:14px;bottom:14px}
+.vid .round .on{display:none}
+.vid.sound .round .on{display:block}
+.vid.sound .round .off{display:none}
+
+/* reviews: Telegram screenshots in rounded iOS-style frames, certificates beside them */
+.revs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(16px,2vw,26px)}
+.rev{display:grid;align-content:start;gap:18px;padding:clamp(18px,2.2vw,28px);border:1px solid var(--line);border-radius:32px;background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,0) 70%)}
+:root[data-mode="day"] .rev{background:linear-gradient(180deg,rgba(0,0,0,.035),rgba(0,0,0,0) 70%)}
+.rev-hd{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:6px 14px}
+.rev-hd b{font:600 26px/1 var(--display);text-transform:uppercase;letter-spacing:.02em}
+.rev-hd span{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold)}
+.rev-body{display:flex;align-items:center;justify-content:center;gap:clamp(14px,2vw,26px)}
+.shot,.cert-shot{display:block;border:0;padding:0;margin:0;background:none;font:inherit;color:inherit;cursor:zoom-in;-webkit-tap-highlight-color:transparent}
+.shot{flex:1 1 auto;min-width:0;max-width:450px;padding:12px;border-radius:26px;background:#0E1621;box-shadow:0 0 0 1px rgba(255,255,255,.07),0 30px 60px -30px rgba(0,0,0,.75);transition:transform .5s var(--ease)}
+.shot img{display:block;width:100%;height:auto;border-radius:16px}
+.cert-shot{flex:0 0 clamp(120px,31%,230px);transform:rotate(2.5deg);transition:transform .5s var(--ease)}
+.cert-shot img{display:block;width:100%;height:auto;border-radius:18px;box-shadow:0 0 0 1px rgba(255,255,255,.08),0 34px 60px -26px rgba(0,0,0,.8)}
+.shot:hover{transform:translateY(-4px)}
+.cert-shot:hover{transform:rotate(0) scale(1.04)}
+.shot:focus-visible,.cert-shot:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+@supports (corner-shape:squircle){
+  .rev{border-radius:56px;corner-shape:squircle}
+  .shot{border-radius:44px;corner-shape:squircle}
+  .shot img{border-radius:26px;corner-shape:squircle}
+  .cert-shot img{border-radius:30px;corner-shape:squircle}
+}
+.rev.cta{align-content:center;justify-items:start;gap:16px;border-color:var(--gold);background:radial-gradient(120% 120% at 100% 0%,rgba(201,163,74,.16),rgba(201,163,74,0) 60%)}
+.rev.cta p{max-width:38ch;opacity:.82}
+.lb{border:0;padding:0;background:transparent;max-width:94vw;max-height:94vh;overflow:visible}
+.lb:focus,.lb:focus-visible{outline:none}
+.lb::backdrop{background:rgba(8,8,10,.9)}
+.lb img{display:block;max-width:92vw;max-height:88vh;height:auto;object-fit:contain;border-radius:24px;cursor:zoom-out}
+
+/* company */
+.co-stats{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.co-stats>div{padding:22px 18px 22px 0;display:grid;gap:8px}
+.co-stats>div+div{padding-left:18px;border-left:1px solid var(--line)}
+.co-stats b{font:600 clamp(34px,4vw,64px)/1 var(--display);text-transform:uppercase}
+.co-stats small{font-size:13px;opacity:.75}
+.note{font-size:13px;opacity:.6;max-width:56ch}
+
+/* company: why Faberlic, numbered reasons and the closing statement */
+.rows.nums li{gap:18px}
+.rows.nums .n{font:600 22px/1 var(--display);color:var(--gold);min-width:1.6em}
+.why-end{display:grid;gap:clamp(22px,3vw,36px);padding-top:clamp(60px,7vw,110px)}
+.why-end p{max-width:62ch;padding:4px 0 4px 22px;border-left:2px solid var(--gold);font-size:clamp(18px,1.5vw,22px);line-height:1.5}
+.why-h{font:700 clamp(40px,6.4vw,110px)/1.1 var(--display);text-transform:uppercase;color:var(--gold);text-wrap:balance}
+
+/* register */
+.reg-why{padding-block:clamp(40px,5vw,80px)}
+.reg-why ol{margin:0;padding:0}
+/* register: conditions for entering the academy */
+.terms{padding-bottom:clamp(50px,6vw,90px)}
+.terms-head{display:grid;gap:18px;margin-bottom:clamp(30px,4vw,56px)}
+.terms-head p{font-size:clamp(18px,1.5vw,22px);opacity:.86;max-width:50ch}
+.terms-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(12px,1.4vw,18px)}
+.terms-list li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:22px;align-items:start;padding:clamp(22px,2.4vw,34px);border:1px solid var(--gold);border-radius:28px;background:radial-gradient(120% 120% at 100% 0%,rgba(201,163,74,.14),rgba(201,163,74,0) 60%)}
+.terms-list .n{font:600 clamp(40px,4vw,64px)/1 var(--display);color:var(--gold)}
+.terms-list h3{margin:0;font:600 clamp(22px,2vw,30px)/1.2 var(--display);text-transform:uppercase;letter-spacing:.02em}
+.terms-list p{margin:12px 0 0;opacity:.8;font-size:16px;line-height:1.5}
+.terms-list .pill{display:inline-block;margin-top:14px;padding:7px 14px;border-radius:999px;background:var(--gold);color:#111;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.terms-note{margin-top:clamp(22px,3vw,36px);max-width:70ch;padding:4px 0 4px 22px;border-left:2px solid var(--gold);font-size:clamp(17px,1.4vw,20px);line-height:1.55}
+@supports (corner-shape:squircle){
+  .terms-list li{border-radius:50px;corner-shape:squircle}
+}
+.steps3 .val{font-size:clamp(30px,3.4vw,52px)}
+.reg-cta{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px;padding-block:clamp(30px,4vw,50px)}
+.reg-cta .btn{font-size:17px;padding:20px 30px}
+.reg-cta code{font:500 15px/1 var(--body);opacity:.7}
+.reg-free{font:700 clamp(30px,3.6vw,56px)/1.1 var(--display);text-transform:uppercase;color:var(--gold);text-wrap:balance}
+.reg-go{display:flex;flex-wrap:wrap;align-items:center;gap:16px 24px}
+
+/* footer */
+footer{padding:60px 0 calc(30px + env(safe-area-inset-bottom,0px));border-top:1px solid var(--line)}
+.f-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px 40px;margin-bottom:40px}
+.f-top nav{display:flex;flex-wrap:wrap;gap:8px 26px;font-weight:600}
+.f-top nav a{opacity:.8}
+.f-top nav a:hover{opacity:1}
+.f-word{font:700 100px/.8 var(--display);text-transform:uppercase;white-space:nowrap;letter-spacing:-.005em}
+.f-bot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;margin-top:26px;font-size:13px;opacity:.6}
+
+/* reveal (hidden state only when JS runs) */
+.js [data-r]{opacity:0;transform:translateY(34px);transition:opacity 1s var(--ease),transform 1s var(--ease);transition-delay:var(--d,0s)}
+.js [data-r].in{opacity:1;transform:none}
+.js .big[data-r]{clip-path:inset(0 0 100% 0);transition:clip-path 1.2s var(--ease),transform 1.2s var(--ease),opacity .6s}
+.js .big[data-r].in{clip-path:inset(-10% 0 -10% 0)}
+
+/* mobile menu */
+.mnav{display:none}
+
+/* ---------- responsive ---------- */
+@media (max-width:1020px){
+  .hdr .nav-pill{display:none}
+  .revs{grid-template-columns:1fr}
+  .story{grid-template-columns:1fr}
+  .story-head{position:static}
+  .who-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .terms-list{grid-template-columns:1fr}
+  .burger-pill{display:flex}
+  .mnav.open{display:grid;position:fixed;z-index:39;top:calc(74px + env(safe-area-inset-top,0px));left:var(--pad);right:var(--pad);padding:8px;border-radius:22px;background:rgba(18,18,18,.88);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.18)}
+  .mnav a{padding:14px 18px;color:#fff;font:600 22px/1 var(--display);text-transform:uppercase;border-radius:14px}
+  .mnav a:hover{background:rgba(255,255,255,.1)}
+  .split,.sec-head{grid-template-columns:1fr}
+  .crew-grid{--cols:3}
+}
+@media (max-width:760px){
+  .hdr{padding-top:14px}
+  .cta-pill{display:none}
+  .hero{height:auto;max-height:none;min-height:0}
+  .stage{height:min(72svh,640px);flex:none;transition:height 1.2s var(--ease)}
+  .preload .stage{height:100svh}
+  .hero-p{bottom:80px;font-size:14px;max-width:30ch}
+  .ctrl{bottom:20px}
+  .panels{height:auto;grid-template-columns:1fr}
+  .preload .panels{height:0;overflow:hidden}
+  .p-sketch{display:none}
+  .p-stats{padding:22px var(--pad)}
+  .stats{gap:12px}
+  .st small{font-size:12px}
+  .st b{font-size:clamp(20px,6.6vw,30px)}
+  .thumb{width:48px;height:48px}
+  .slide-label{font-size:12px;gap:10px}
+  .counter{display:none}
+  .row3,.co-stats{grid-template-columns:1fr}
+  .row3>*+*{border-left:0;border-top:1px solid var(--line)}
+  .co-stats>div+div{border-left:0;padding-left:0;border-top:1px solid var(--line)}
+  .revs{grid-template-columns:1fr}
+  .rev-body{flex-direction:column}
+  .facts>div{grid-template-columns:1fr}
+  .who-grid{grid-template-columns:1fr}
+  .who-grid li{grid-template-columns:auto minmax(0,1fr);align-items:center;gap:18px;min-height:0}
+  .who-grid .n{font-size:30px;min-width:1.6em}
+  .who-grid li p{font-size:17px}
+  .terms-list li{gap:14px}
+  .story-body p{font-size:17px}
+  .story-body .story-if{font-size:18px}
+  .shot{width:100%;padding:8px}
+  .cert-shot{flex-basis:auto;width:62%}
+  .wipe{min-height:520px}
+  .crew-grid{--cols:2}
+  .nm{font-size:16px}
+  .crew-msg{text-align:center}
+  .vid{height:auto;width:min(100%,330px)}
+  .depth,#team .depth{height:clamp(460px,78svh,640px)}
+  .depth .cut{height:86%}
+  .depth .cut.card{width:calc(100% - 2*var(--pad));height:auto;aspect-ratio:4/3;top:64px;bottom:auto;border-radius:16px}
+  #team .depth .cap{bottom:24px}
+  .certificate .t1{font-size:14px;letter-spacing:.22em}
+  .certificate .t3{font-size:22px}
+  .certificate .t5{font-size:12px}
+  .depth .cap{bottom:84px}
+  .mega{top:100px}
+  .depth .word{top:86px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .js [data-r],.js .big[data-r]{opacity:1;transform:none;clip-path:none}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-left" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+    <symbol id="i-right" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/></symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="3"/><path d="M16 2v4M8 2v4M3 10h18M9 16l2 2 4-4"/></symbol>
+    <symbol id="i-send" viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4z"/><path d="M22 2 11 13"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 8h16M4 16h16"/></symbol>
+    <symbol id="i-key" viewBox="0 0 24 24"><circle cx="7.5" cy="15.5" r="4.5"/><path d="m10.7 12.3 9.8-9.8M17 6l3 3M15 8l2 2"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5V21H3z"/><path d="M9 21v-6h6v6"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v1"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></symbol>
+    <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.5 13 17 22l-5-3-5 3 1.5-9"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 8.5 8.5 0 0 1-3.8-.9L3 21l1.9-5.2A8.4 8.4 0 0 1 12 3a8.5 8.5 0 0 1 9 8.5z"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+    <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.5 19 2c1 2 2 4.2 2 8 0 5.5-4.8 10-10 10z"/><path d="M2 21c0-3 1.9-5.4 5-6"/></symbol>
+    <symbol id="i-mute" viewBox="0 0 24 24"><path d="M11 5 6 9H2v6h4l5 4zM22 9l-6 6M16 9l6 6"/></symbol>
+    <symbol id="i-sound" viewBox="0 0 24 24"><path d="M11 5 6 9H2v6h4l5 4zM15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-diamond" viewBox="0 0 32 32"><path d="M9 6h14l6 7-13 15L3 13z" fill="none" stroke="currentColor" stroke-width="1.2"/><path d="M3 13h26M12 6l-3 7 7 15 7-15-3-7M16 6l-4 7h8z" fill="none" stroke="currentColor" stroke-width="1.2"/></symbol>
+  </defs>
+</svg>
+
+<header class="hdr" id="hdr">
+  <nav class="pill nav-pill" aria-label="Разделы">
+    <a class="brand" href="#top">Dilrabo</a>
+    <a href="#bio" data-i18n="nav_bio">Биография</a>
+    <a href="#training" data-i18n="nav_training">Обучение</a>
+    <a href="#team" data-i18n="nav_team">Команда</a>
+    <a href="#reviews" data-i18n="nav_rev">Отзывы</a>
+    <a href="#company" data-i18n="nav_company">Компания</a>
+  </nav>
+  <div class="sp"></div>
+  <div class="pill lang" role="group" aria-label="Язык / Til">
+    <button type="button" id="lang-ru" data-lang="ru" aria-pressed="true">RU</button>
+    <button type="button" id="lang-uz" data-lang="uz" aria-pressed="false">UZ</button>
+  </div>
+  <div class="pill cta-pill"><a data-reg href="https://t.me/dilyafl_bot?start=site" target="_blank" rel="noopener"><span data-i18n="nav_reg">Регистрация</span><svg class="ico"><use href="#i-cal"/></svg></a></div>
+  <div class="pill burger-pill"><button class="burger" id="burger" type="button" aria-label="Меню" aria-expanded="false" aria-controls="mnav"><svg class="ico"><use href="#i-menu"/></svg></button></div>
+</header>
+<nav class="mnav" id="mnav" aria-label="Меню">
+  <a href="#bio" data-i18n="nav_bio">Биография</a>
+  <a href="#training" data-i18n="nav_training">Обучение</a>
+  <a href="#team" data-i18n="nav_team">Команда</a>
+  <a href="#reviews" data-i18n="nav_rev">Отзывы</a>
+  <a href="#company" data-i18n="nav_company">Компания</a>
+  <a data-reg href="https://t.me/dilyafl_bot?start=site" target="_blank" rel="noopener" data-i18n="nav_reg">Регистрация</a>
+</nav>
+
+<main>
+<section class="hero" id="top" aria-label="Dilrabo Academy">
+  <div class="stage" id="stage">
+    <div class="bd" id="bd"><i></i><i></i></div>
+    <h1 class="mega" id="mega" data-fit aria-label="Dilrabo Academy">DILRABO ACADEMY</h1>
+    <div class="figs" id="figs">
+      <img class="fig" data-s="0" data-m="day" src="img2/cut-8324.webp" alt="" width="933" height="1400">
+      <img class="fig" data-s="0" data-m="night" src="img2/cut-8336.webp" alt="Дильрабо, основатель Dilrabo Academy" width="933" height="1400">
+      <img class="fig dim" data-s="1" src="img2/cut-8325.webp" alt="" width="933" height="1400">
+      <img class="fig dim" data-s="2" src="img2/cut-8328.webp" alt="" width="933" height="1400">
+    </div>
+    <p class="hero-p" id="heroP">Обучение и наставничество для тех, кто строит свой бизнес с Faberlic. Система, команда и личный наставник с первого дня.</p>
+    <div class="ctrl">
+      <button class="round solid mode" id="modeBtn" type="button" aria-label="День / ночь"><svg class="ico moon"><use href="#i-moon"/></svg><svg class="ico sun"><use href="#i-sun"/></svg></button>
+      <a class="round" data-reg href="https://t.me/dilyafl_bot?start=site" target="_blank" rel="noopener" aria-label="Регистрация"><svg class="ico"><use href="#i-spark"/></svg></a>
+    </div>
+    <div class="loadbar" aria-hidden="true"><b id="lbar"></b><span id="lpct">0%</span></div>
+  </div>
+  <div class="panels">
+    <div class="p-sketch" aria-hidden="true">
+      <img data-sk="0" src="img2/sk1.jpg" alt="">
+      <img data-sk="1" src="img2/sk2.jpg" alt="">
+      <img data-sk="2" src="img2/sk3.jpg" alt="">
+    </div>
+    <div class="p-stats">
+      <div class="stats" id="stats">
+        <div class="st"><small><svg class="ico"><use href="#i-key"/></svg><span></span></small><b></b></div>
+        <div class="st"><small><svg class="ico"><use href="#i-pin"/></svg><span></span></small><b></b></div>
+        <div class="st"><small><svg class="ico"><use href="#i-home"/></svg><span></span></small><b></b></div>
+      </div>
+      <div class="p-foot">
+        <div class="arrows">
+          <button class="arr" id="prev" type="button" aria-label="Назад"><svg class="ico"><use href="#i-left"/></svg></button>
+          <button class="arr" id="next" type="button" aria-label="Вперёд"><svg class="ico"><use href="#i-right"/></svg></button>
+          <span class="counter" id="counter">01 / 03</span>
+        </div>
+        <div class="slide-label">
+          <span id="slLabel"></span>
+          <div class="thumbs" id="thumbs"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="bio">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="tag" data-r data-i18n="nav_bio">Биография</span>
+      <h2 class="big" data-r data-i18n="bio_h">Коротко обо мне</h2>
+      <p data-r data-i18n="bio_lead">Ваш рост — это путь, который можно выстроить.</p>
+    </div>
+  </div>
+  <div class="split">
+    <div class="pane dark wipe" data-wipe>
+      <img class="sk" src="img2/sk1.jpg" alt="" loading="lazy">
+      <img class="ph" src="img/bio.jpg" alt="Дильрабо в кресле, деловой портрет" loading="lazy">
+      <span class="lbl" data-i18n="bio_lbl">Дильрабо М. — основатель</span>
+    </div>
+    <div class="pane line copy">
+      <dl class="facts" data-stagger>
+        <div data-r><dt data-i18n="bf1">ФИО</dt><dd class="name">Дилрабо Махматкулова</dd></div>
+        <div data-r><dt data-i18n="bf2">Должность</dt><dd data-i18n="bf2v">Директор команды Faberlic</dd></div>
+        <div data-r><dt data-i18n="bf3">Опыт</dt><dd class="num" data-i18n="bf3v">9 лет</dd></div>
+        <div data-r><dt data-i18n="bf4">Достижения</dt><dd><ul class="chips"><li data-i18n="bf4a">Квалификационные бонусы</li><li data-i18n="bf4b">Бесплатные путешествия</li><li data-i18n="bf4c">Личные автомобили</li></ul></dd></div>
+        <div data-r><dt data-i18n="bf5">Авторская работа</dt><dd data-i18n="bf5v">Основатель системы Dilrabo Academy и обучающей программы Diamond Academy</dd></div>
+      </dl>
+      <p class="quote" data-r data-i18n="bio_q">«Успех — это не удача. Это система и люди рядом с вами»</p>
+    </div>
+  </div>
+  <div class="wrap story">
+    <div class="story-head">
+      <span class="tag" data-r data-i18n="story_tag">Авторская система</span>
+      <h3 class="mid" data-r data-i18n="story_h">Почти 10 лет поиска — в одной системе</h3>
+    </div>
+    <div class="story-body">
+      <p data-r data-i18n="story_p1">Я наставник почти с 10-летним опытом в сетевом бизнесе! За эти годы я осознала много ошибок и недочётов, поняла, что знаний, которые нам дают, недостаточно, и ради развития и роста получила очень много новых знаний.</p>
+      <p data-r data-i18n="story_p2">В этой академии я собрала всё самое важное для развития и выхода на доход: от проверенных временем пособий до новых, современных методов, которые облегчают нашу работу.</p>
+      <p class="story-if" data-r data-i18n="story_p3">Если вы не хотите, как я, потратить почти 10 лет жизни на поиски, или у вас уже есть команда, вы устали от устаревших методов и не знаете, что делать для её развития, — вам нужна именно моя авторская система.</p>
+      <p class="story-free" data-r data-i18n="story_free">Эта система абсолютно бесплатна для тех, кто зарегистрировался в моей команде!</p>
+      <p data-r data-i18n="story_p4">Чтобы войти в систему, зарегистрируйтесь на этом сайте или через бота и выполните минимальные условия.</p>
+      <p class="story-cta" data-r data-i18n="story_p5">Не тратьте годы на поиски — зарегистрируйтесь сегодня и получите эту систему!</p>
+      <div data-r><a class="btn" data-reg href="https://t.me/dilyafl_bot?start=site" target="_blank" rel="noopener"><span data-i18n="story_btn">Зарегистрироваться</span><svg class="ico"><use href="#i-arrow"/></svg></a></div>
+    </div>
+  </div>
+  <div class="wrap who">
+    <div class="who-head">
+      <span class="tag" data-r data-i18n="who_tag">Для кого</span>
+      <h2 class="big" data-r data-i18n="who_h">Для кого академия?</h2>
+    </div>
+    <div class="who-grid" data-stagger>
+      <ol>
+        <li data-r><span class="n">01</span><p data-i18n="who1">Лидерам с опытом в сетевом бизнесе, которые остановились в одной точке</p></li>
+        <li data-r><span class="n">02</span><p data-i18n="who2">Тем, у кого большая команда, но не всегда хватает времени на неё</p></li>
+        <li data-r><span class="n">03</span><p data-i18n="who3">Тем, кто ищет новые, современные способы расширить команду</p></li>
+        <li data-r><span class="n">04</span><p data-i18n="who4">Работающим людям, которые хотят дополнительный доход</p></li>
+        <li data-r><span class="n">05</span><p data-i18n="who5">Студентам</p></li>
+        <li data-r><span class="n">06</span><p data-i18n="who6">Молодым мамам и домохозяйкам</p></li>
+        <li data-r><span class="n">07</span><p data-i18n="who7">Тем, кто с нуля ищет новую онлайн-сферу</p></li>
+      </ol>
+      <div class="who-all" data-r><svg class="ico" aria-hidden="true"><use href="#i-diamond"/></svg><p data-i18n="who_all">Эта система подходит всем — от новичков в этой сфере до директоров больших команд!</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="training" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="tag" data-r data-i18n="nav_training">Обучение</span>
+      <h2 class="big" data-r data-i18n="tr_h">От первого шага до лидерства</h2>
+      <p data-r data-i18n="tr_p">Короткие уроки, живые эфиры и задания с проверкой. Вы двигаетесь в своём темпе, а наставник следит, чтобы знания превращались в действия.</p>
+    </div>
+  </div>
+  <div class="row3" data-stagger>
+    <article data-r><small><svg class="ico"><use href="#i-spark"/></svg><span data-i18n="stg1_n">Этап 1:</span></small><div class="val" data-i18n="st1">Старт</div><p data-i18n="stg1_p">Знакомство с компанией и продукцией, регистрация, первые заказы и первые клиенты.</p><div class="meter" style="--w:.33"></div></article>
+    <article data-r><small><svg class="ico"><use href="#i-target"/></svg><span data-i18n="stg2_n">Этап 2:</span></small><div class="val" data-i18n="st2">Рост</div><p data-i18n="stg2_p">Личный бренд в соцсетях, работа с клиентами, приглашение партнёров в команду.</p><div class="meter" style="--w:.66"></div></article>
+    <article data-r><small><svg class="ico"><use href="#i-award"/></svg><span data-i18n="stg3_n">Этап 3:</span></small><div class="val" data-i18n="st3">Лидерство</div><p data-i18n="stg3_p">Наставничество, управление структурой, маркетинг-план и выход на стабильный доход.</p><div class="meter" style="--w:1"></div></article>
+  </div>
+  <div class="split" style="margin-top:clamp(50px,6vw,90px)">
+    <div class="pane dark cert-pane">
+      <img class="cert-photo" src="img/training.jpg" alt="" loading="lazy">
+      <div class="certificate" data-r>
+        <div class="in1"><div class="in2">
+          <svg aria-hidden="true"><use href="#i-diamond"/></svg>
+          <div class="t1">DILRABO</div><div class="t2">ACADEMY</div>
+          <div class="t3">Certificate</div>
+          <div class="t4" data-i18n="cert_t4">подтверждает, что</div>
+          <div class="t5" data-i18n="cert_t5">Ваше имя</div>
+          <div class="t6" data-i18n="cert_t6">ЭТАП 1 ПРОЙДЕН</div>
+        </div></div>
+      </div>
+    </div>
+    <div class="pane line copy" style="align-content:center">
+      <span class="tag" data-r data-i18n="cert_e">Сертификат</span>
+      <h3 class="mid" data-r data-i18n="cert_h">Каждый этап подтверждается сертификатом</h3>
+      <p data-r data-i18n="cert_p">После каждого этапа вы сдаёте практическое задание и получаете именной сертификат Dilrabo Academy, подписанный директором академии.</p>
+      <div data-r><a class="btn" data-reg href="https://t.me/dilyafl_bot?start=site" target="_blank" rel="noopener"><span data-i18n="cert_btn">Начать первый этап</span><svg class="ico"><use href="#i-arrow"/></svg></a></div>
+    </div>
+  </div>
+</section>
+
+<section id="team">
+  <div class="depth" data-depth>
+    <div class="bd"><i style="background:radial-gradient(120% 90% at 50% 30%,#a8958f 0%,#7d6a64 45%,#2a2321 100%)"></i></div>
+    <div class="word" data-fit data-fit-max=".36" data-i18n="team_word">Наша команда</div>
+    <img class="cut card" src="img3/team-faberlic.jpg" alt="Команда Dilrabo Academy на мероприятии Faberlic" width="1280" height="853" loading="lazy">
+    <div class="cap"><b data-i18n="team_cap_b">Вместе мы сильнее</b><span data-i18n="team_cap">Новичок приходит не в пустоту, а в команду: здесь делятся опытом и радуются победам друг друга.</span></div>
+  </div>
+  <div class="row3" data-stagger>
+    <article data-r><small><svg class="ico"><use href="#i-user"/></svg><span data-i18n="r1_n">Наставник:</span></small><div class="val">1:1</div><p data-i18n="r1_p">Личный наставник помогает с первыми шагами и отвечает на вопросы.</p></article>
+    <article data-r><small><svg class="ico"><use href="#i-chat"/></svg><span data-i18n="r2_n">Чат и эфиры:</span></small><div class="val">24/7</div><p data-i18n="r2_p">Ежедневная поддержка, разборы и полезные материалы в общем чате.</p></article>
+    <article data-r><small><svg class="ico"><use href="#i-users"/></svg><span data-i18n="r3_n">Цели:</span></small><div class="val" data-i18n="r3_v">Вместе</div><p data-i18n="r3_p">Ставим цели на месяц и вместе к ним идём.</p></article>
+  </div>
+  <div class="wrap crew">
+    <div class="crew-head">
+      <div>
+        <span class="tag" data-r data-i18n="crew_tag">Лица команды</span>
+        <h3 class="mid" data-r data-i18n="crew_h">Партнёры, которые растут вместе с нами</h3>
+      </div>
+      <div class="crew-tools" id="crewTools" hidden>
+        <button class="btn sm" type="button" id="crewEdit"><span data-i18n="crew_edit">Подписать имена</span></button>
+        <button class="btn sm" type="button" id="crewSave" hidden><span data-i18n="crew_save">Сохранить</span></button>
+        <button class="btn sm ghost" type="button" id="crewCancel" hidden><span data-i18n="crew_cancel">Отмена</span></button>
+      </div>
+    </div>
+    <ul class="crew-grid" id="crew" data-stagger>
+      <li data-r data-id="t1"><div class="ava"><img src="img3/t1.webp" alt="" width="480" height="480" loading="lazy"></div><b class="nm"></b></li>
+      <li data-r data-id="t2"><div class="ava"><img src="img3/t2.webp" alt="" width="480" height="480" loading="lazy"></div><b class="nm"></b></li>
+      <li data-r data-id="t3"><div class="ava"><img src="img3/t3.webp" alt="" width="480" height="480" loading="lazy"></div><b class="nm"></b></li>
+      <li data-r data-id="t4"><div class="ava"><img src="img3/t4.webp" alt="" width="480" height="480" loading="lazy"></div><b class="nm"></b></li>
+      <li data-r data-id="t5"><div class="ava"><img src="img3/t5.webp" alt="" width="480" height="480" loading="lazy"></div><b class="nm"></b></li>
+      <li data-r data-id="t6"><div class="ava"><img src="img3/t6.webp" alt="" width="480" height="480" loading="lazy"></div><b class="nm"></b></li>
+      <li data-r data-id="t7"><div class="ava"><img src="img3/t7.webp" alt="" width="480" height="480" loading="lazy"></div><b class="nm"></b></li>
+    </ul>
+    <p class="crew-msg" id="crewMsg" role="status"></p>
+  </div>
+  <div class="split" style="margin-top:clamp(50px,6vw,90px)">
+    <div class="pane dark vid-pane">
+      <div class="vid" id="vid">
+        <video src="img3/seminar.mp4" poster="img3/seminar.jpg" muted loop playsinline preload="metadata"></video>
+        <button class="round solid" type="button" id="vidSound" aria-label="Звук" aria-pressed="false"><svg class="ico off"><use href="#i-mute"/></svg><svg class="ico on"><use href="#i-sound"/></svg></button>
+      </div>
+    </div>
+    <div class="pane line copy" style="align-content:center">
+      <span class="tag" data-r>Faberlic Seminar</span>
+      <h3 class="mid" data-r data-i18n="vid_h">Живые встречи и семинары</h3>
+      <p data-r data-i18n="vid_p">Мы регулярно встречаемся вживую: семинары Faberlic, обучение и поздравления лидеров с новыми достижениями.</p>
+      <div data-r><a class="btn" data-reg href="https://t.me/dilyafl_bot?start=site" target="_blank" rel="noopener"><span data-i18n="vid_btn">Присоединиться к команде</span><svg class="ico"><use href="#i-arrow"/></svg></a></div>
+    </div>
+  </div>
+  <div class="marquee" aria-hidden="true">
+    <div class="track" id="track">
+      <img src="img/g1.jpg" alt="" loading="lazy"><img src="img/g2.jpg" alt="" loading="lazy"><img src="img/g3.jpg" alt="" loading="lazy"><img src="img/g4.jpg" alt="" loading="lazy"><img src="img/g5.jpg" alt="" loading="lazy"><img src="img/g6.jpg" alt="" loading="lazy"><img src="img/g7.jpg" alt="" loading="lazy"><img src="img/g8.jpg" alt="" loading="lazy"><img src="img/g9.jpg" alt="" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="reviews">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="tag" data-r data-i18n="nav_rev">Отзывы</span>
+      <h2 class="big" data-r data-i18n="rev_h">Что говорят ученицы</h2>
+      <p data-r data-i18n="rev_lead">Настоящие сообщения из нашего Telegram-чата и сертификаты, выданные после первого этапа обучения.</p>
+    </div>
+    <div class="revs" data-stagger>
+      <article class="rev" data-r>
+        <header class="rev-hd"><b>Маржона</b><span data-i18n="rev_cert">Сертификат · 1 этап</span></header>
+        <div class="rev-body">
+          <button class="shot" type="button" data-zoom><img src="img4/rev-marjona.webp" alt="Отзыв Маржоны в Telegram" width="410" height="167" loading="lazy"></button>
+          <button class="cert-shot" type="button" data-zoom><img src="img4/cert-marjona.webp" alt="Сертификат Маржоны об окончании 1-го этапа" width="289" height="402" loading="lazy"></button>
+        </div>
+      </article>
+      <article class="rev" data-r>
+        <header class="rev-hd"><b>Нодира</b><span data-i18n="rev_cert">Сертификат · 1 этап</span></header>
+        <div class="rev-body">
+          <button class="shot" type="button" data-zoom><img src="img4/rev-nodira.webp" alt="Отзыв Нодиры в Telegram" width="429" height="196" loading="lazy"></button>
+          <button class="cert-shot" type="button" data-zoom><img src="img4/cert-nodira.webp" alt="Сертификат Нодиры об окончании 1-го этапа" width="300" height="424" loading="lazy"></button>
+        </div>
+      </article>
+      <article class="rev" data-r>
+        <header class="rev-hd"><b>Замира</b><span data-i18n="rev_cert">Сертификат · 1 этап</span></header>
+        <div class="rev-body">
+          <button class="shot" type="button" data-zoom><img src="img4/rev-zamira.webp" alt="Отзыв Замиры в Telegram" width="427" height="196" loading="lazy"></button>
+          <button class="cert-shot" type="button" data-zoom><img src="img4/cert-zamira.webp" alt="Сертификат Замиры об окончании 1-го этапа" width="530" height="750" loading="lazy"></button>
+        </div>
+      </article>
+      <article class="rev cta" data-r>
+        <span class="tag" data-i18n="rev_cert">Сертификат · 1 этап</span>
+        <h3 class="mid" data-i18n="rev_cta_h">Следующий сертификат — ваш</h3>
+        <p data-i18n="rev_cta_p">Пройдите первый этап обучения и получите сертификат Dilrabo Academy.</p>
+        <a class="btn" data-reg href="https://t.me/dilyafl_bot?start=site" target="_blank" rel="noopener"><span data-i18n="rev_cta_btn">Записаться на обучение</span><svg class="ico"><use href="#i-arrow"/></svg></a>
+      </article>
+    </div>
+  </div>
+  <dialog class="lb" id="lb" aria-label="Просмотр"><img alt=""></dialog>
+</section>
+
+<section class="sec" id="company">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="tag" data-r data-i18n="nav_company">Компания</span>
+      <h2 class="big" data-r data-i18n="co_h">Почему я именно в Faberlic?!</h2>
+    </div>
+  </div>
+  <div class="split">
+    <div class="pane line copy" style="align-content:space-between">
+      <div class="co-stats" data-stagger>
+        <div data-r><b data-count="1997">1997</b><small data-i18n="f1">год основания</small></div>
+        <div data-r><b>O<sub style="font-size:.5em">2</sub></b><small data-i18n="f2">кислородная косметика</small></div>
+        <div data-r><b data-i18n="f3b">Своё</b><small data-i18n="f3">производство</small></div>
+      </div>
+      <ol class="rows nums" data-stagger>
+        <li data-r><span class="n">01</span><span data-i18n="why1">Широкий и богатый ассортимент</span></li>
+        <li data-r><span class="n">02</span><span data-i18n="why2">Высокое качество</span></li>
+        <li data-r><span class="n">03</span><span data-i18n="why3">Доступные цены</span></li>
+        <li data-r><span class="n">04</span><span data-i18n="why4">Прозрачный маркетинг-план</span></li>
+        <li data-r><span class="n">05</span><span data-i18n="why5">Поддержка компании и руководства</span></li>
+        <li data-r><span class="n">06</span><span data-i18n="why6">Удобная доставка продукции</span></li>
+        <li data-r><span class="n">07</span><span data-i18n="why7">Официально и законно в Узбекистане</span></li>
+        <li data-r><span class="n">08</span><span data-i18n="why8">Компания стабильно развивается уже 29 лет</span></li>
+      </ol>
+      <p class="note" data-i18n="co_note">Dilrabo Academy — команда независимых партнёров Faberlic и не является официальным представительством компании.</p>
+    </div>
+    <div class="pane dark wipe" data-wipe>
+      <img class="sk" src="img2/sk3.jpg" alt="" loading="lazy">
+      <img class="ph" src="img2/company.jpg" alt="Дильрабо, деловой портрет" loading="lazy">
+      <span class="lbl">Faberlic · 1997</span>
+    </div>
+  </div>
+  <div class="wrap why-end">
+    <p data-r data-i18n="why_p">Какой бы замечательной ни была выбранная вами компания, без прочной и совершенной системы в вашей сети добиться результата непросто! А эта система и эти возможности есть только в Dilrabo Academy!</p>
+    <h3 class="why-h" data-r data-i18n="why_h">Правильный выбор — залог результата!</h3>
+  </div>
+</section>
+
+<section id="register">
+  <div class="depth" data-depth>
+    <div class="bd"><i style="background:radial-gradient(120% 90% at 50% 30%,#f0c2a1 0%,#c89474 45%,#3a2a22 100%)"></i></div>
+    <div class="word" data-fit data-fit-max=".36" data-i18n="reg_word">Зачем нужна<br>регистрация?</div>
+    <img class="cut" src="img2/cut-8335.webp" alt="Дильрабо приглашает в команду" width="933" height="1400" loading="lazy">
+    <div class="cap"><b data-i18n="reg_h">Готовы начать свой путь?</b><span data-i18n="reg_p">Зарегистрируйтесь через Telegram-бот: ответьте на пару вопросов, и наставник свяжется с вами лично.</span></div>
+    <div class="corner"><a class="round solid" data-reg href="https://t.me/dilyafl_bot?start=site" target="_blank" rel="noopener" aria-label="Telegram"><svg class="ico"><use href="#i-send"/></svg></a></div>
+  </div>
+  <div class="wrap reg-why">
+    <ol class="who-grid" data-stagger>
+      <li data-r><span class="n">01</span><p data-i18n="rw1">Чтобы открыть свой личный кабинет</p></li>
+      <li data-r><span class="n">02</span><p data-i18n="rw2">Чтобы покупать продукцию со скидками 20% и 26%</p></li>
+      <li data-r><span class="n">03</span><p data-i18n="rw3">Чтобы выйти на ежемесячный доход</p></li>
+      <li data-r><span class="n">04</span><p data-i18n="rw4">Чтобы пользоваться академией и предложить её своей команде</p></li>
+    </ol>
+  </div>
+  <div class="wrap terms">
+    <div class="terms-head">
+      <span class="tag" data-r data-i18n="tm_tag">Условия</span>
+      <h2 class="big" data-r data-i18n="tm_h">Условия входа в академию</h2>
+      <p data-r data-i18n="tm_lead">Условия входа в эту академию минимальные:</p>
+    </div>
+    <ol class="terms-list" data-stagger>
+      <li data-r><span class="n">01</span><div><h3 data-i18n="tm1">Зарегистрироваться в моей команде именно через этот сайт или бот</h3><span class="pill" data-i18n="tm1b">Абсолютно бесплатно</span></div></li>
+      <li data-r><span class="n">02</span><div><h3 data-i18n="tm2">Начать работу минимум с 25 баллов</h3><p data-i18n="tm2p">Примерно 400 000 – 600 000 сум. Точная сумма зависит от того, что вы покупаете.</p></div></li>
+    </ol>
+    <p class="terms-note" data-r data-i18n="tm_note">Конечно, присоединиться к моей команде можно с любой суммой — это условие только для академии. Когда вы уже начали работу, вы можете войти в академию и позже, сделав следующий заказ на 25 баллов.</p>
+  </div>
+  <div class="row3 steps3" data-stagger>
+    <article data-r><small><svg class="ico"><use href="#i-send"/></svg><span data-i18n="rs1_n">Шаг 1:</span></small><div class="val" data-i18n="rs1_v">Бот</div><p data-i18n="rs1">Откройте Telegram-бот @dilyafl_bot.</p></article>
+    <article data-r><small><svg class="ico"><use href="#i-chat"/></svg><span data-i18n="rs2_n">Шаг 2:</span></small><div class="val" data-i18n="rs2_v">Анкета</div><p data-i18n="rs2">Ответьте на несколько простых вопросов.</p></article>
+    <article data-r><small><svg class="ico"><use href="#i-user"/></svg><span data-i18n="rs3_n">Шаг 3:</span></small><div class="val" data-i18n="rs3_v">Наставник</div><p data-i18n="rs3">Наставник свяжется с вами и поможет сделать первые шаги.</p></article>
+  </div>
+  <div class="wrap reg-cta">
+    <p class="reg-free" data-r data-i18n="reg_free">Регистрация абсолютно бесплатна!</p>
+    <div class="reg-go">
+    <a class="btn" data-reg href="https://t.me/dilyafl_bot?start=site" target="_blank" rel="noopener"><svg class="ico"><use href="#i-send"/></svg><span data-i18n="reg_btn">Зарегистрироваться в Telegram</span><svg class="ico"><use href="#i-arrow"/></svg></a>
+    <code>t.me/dilyafl_bot</code>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="f-top">
+      <span class="tag" data-i18n="foot">Независимые партнёры Faberlic</span>
+      <nav>
+        <a href="#bio" data-i18n="nav_bio">Биография</a>
+        <a href="#training" data-i18n="nav_training">Обучение</a>
+        <a href="#team" data-i18n="nav_team">Команда</a>
+        <a href="#reviews" data-i18n="nav_rev">Отзывы</a>
+        <a href="#company" data-i18n="nav_company">Компания</a>
+        <a data-reg href="https://t.me/dilyafl_bot?start=site" target="_blank" rel="noopener" data-i18n="nav_reg">Регистрация</a>
+      </nav>
+    </div>
+    <div class="f-word" data-fit>Dilrabo Academy</div>
+    <div class="f-bot"><span>© <span id="year">2026</span> Dilrabo Academy</span><span>Telegram: @dilyafl_bot</span></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var REG_URL = 'https://t.me/dilyafl_bot?start=site';
+  var root = document.documentElement;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function store(k,v){try{ if(v===undefined) return localStorage.getItem(k); localStorage.setItem(k,v);}catch(e){return null}}
+  document.querySelectorAll('[data-reg]').forEach(function(a){a.href = REG_URL});
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  /* ---------- slides ---------- */
+  var SL = [
+    {bg:{day:['#F7C597','#C48A5F','#4a3326'], night:['#7d6866','#4a3b39','#0d0b0b']}, icons:['i-key','i-pin','i-user'], fig:{day:'cut-8324',night:'cut-8336'},
+     ru:{p:'Обучение и наставничество для тех, кто строит свой бизнес с Faberlic. Система, команда и личный наставник с первого дня.', label:'Биография<br>— Дильрабо М.', st:[['Роль:','Директор'],['Партнёр:','Faberlic'],['Наставник:','1:1']]},
+     uz:{p:'Faberlic билан бизнес қураётганлар учун таълим ва устозлик. Тизим, жамоа ва биринчи кундан шахсий устоз.', label:'Биография<br>— Дильрабо М.', st:[['Лавозим:','Директор'],['Ҳамкор:','Faberlic'],['Устоз:','1:1']]}},
+    {bg:{day:['#c2aaa1','#8e746c','#3b2e2a'], night:['#6a5853','#3a2f2c','#0d0b0b']}, icons:['i-spark','i-award','i-chat'], fig:{day:'cut-8325',night:'cut-8325'},
+     ru:{p:'Короткие уроки, живые эфиры и задания с проверкой. Каждый этап заканчивается именным сертификатом.', label:'Обучение<br>— 3 этапа', st:[['Этапы:','3'],['Формат:','Онлайн'],['Поддержка:','24/7']]},
+     uz:{p:'Қисқа дарслар, жонли эфирлар ва текширувли топшириқлар. Ҳар бир босқич номли сертификат билан якунланади.', label:'Таълим<br>— 3 босқич', st:[['Босқичлар:','3'],['Формат:','Онлайн'],['Кўмак:','24/7']]}},
+    {bg:{day:['#bba29a','#806a63','#352a27'], night:['#5e4d48','#352b28','#0d0b0b']}, icons:['i-cal','i-leaf','i-home'], fig:{day:'cut-8328',night:'cut-8328'},
+     ru:{p:'Faberlic: собственное производство, широкий каталог и запатентованная кислородная косметика.', label:'Компания<br>— Faberlic', st:[['Основана:','1997'],['Косметика:','O2'],['Производство:','Своё']]},
+     uz:{p:'Faberlic: ўз ишлаб чиқариши, кенг каталог ва патентланган кислородли косметика.', label:'Компания<br>— Faberlic', st:[['Асос солинган:','1997'],['Косметика:','O2'],['Ишлаб чиқариш:','Ўз']]}}
+  ];
+  var cur = 0, lang = 'ru';
+  var mode = root.getAttribute('data-mode') || 'night';
+  var bdLayers = document.querySelectorAll('#bd i'), bdOn = 0;
+  var figs = document.querySelectorAll('#figs .fig');
+  var sks = document.querySelectorAll('.p-sketch img');
+  var stEls = document.querySelectorAll('#stats .st');
+  var heroP = document.getElementById('heroP'), slLabel = document.getElementById('slLabel');
+  var thumbs = document.getElementById('thumbs'), counter = document.getElementById('counter');
+
+  function grad(c){ return 'radial-gradient(110% 95% at 50% 32%,'+c[0]+' 0%,'+c[1]+' 52%,'+c[2]+' 100%)'; }
+  function paintBackdrop(){
+    var nxt = bdLayers[1-bdOn];
+    nxt.style.background = grad(SL[cur].bg[mode]);
+    nxt.classList.add('on'); bdLayers[bdOn].classList.remove('on'); bdOn = 1-bdOn;
+  }
+  function paintFigs(dir){
+    figs.forEach(function(f){
+      var on = +f.dataset.s===cur && (!f.dataset.m || f.dataset.m===mode);
+      var was = f.classList.contains('on');
+      if (on && !was){ f.style.transition='none'; f.style.setProperty('--fx', (dir||0)*70+'px'); void f.offsetWidth; f.style.transition=''; }
+      if (!on && was) f.style.setProperty('--fx', -(dir||0)*70+'px');
+      f.classList.toggle('on', on);
+      if (on) f.style.setProperty('--fx','0px');
+    });
+    sks.forEach(function(s){ s.classList.toggle('on', +s.dataset.sk===cur); });
+  }
+  var CH = 'ABCDEFGHKLMNOPRSTUVXYZ';
+  function scramble(el, text){
+    if (reduce){ el.textContent = text; return; }
+    var t0 = performance.now(), dur = 750, n = text.length;
+    (function tick(t){
+      var p = Math.min(1,(t-t0)/dur), out = '';
+      for (var i=0;i<n;i++){
+        var c = text[i];
+        if (p >= (i+1)/n || /[\s\/:]/.test(c)) out += c;
+        else out += /[0-9]/.test(c) ? String((Math.random()*10)|0) : CH[(Math.random()*CH.length)|0];
+      }
+      el.textContent = out;
+      if (p<1) requestAnimationFrame(tick);
+    })(t0);
+  }
+  function paintText(animate){
+    var d = SL[cur][lang];
+    stEls.forEach(function(el,i){
+      el.querySelector('use').setAttribute('href','#'+SL[cur].icons[i]);
+      el.querySelector('small span').textContent = d.st[i][0];
+      var b = el.querySelector('b'), v = d.st[i][1].toUpperCase();
+      if (animate) scramble(b, v); else b.textContent = v;
+    });
+    function swap(el, html){
+      if (!animate){ el.innerHTML = html; return; }
+      el.classList.add('swap'); setTimeout(function(){ el.innerHTML = html; el.classList.remove('swap'); }, 380);
+    }
+    swap(heroP, d.p); swap(slLabel, d.label);
+    counter.textContent = '0'+(cur+1)+' / 0'+SL.length;
+    thumbs.innerHTML = '';
+    [1,2].forEach(function(k){
+      var j = (cur+k)%SL.length;
+      var b = document.createElement('button'); b.type='button'; b.className='thumb'; b.setAttribute('aria-label', SL[j][lang].label.replace('<br>',' '));
+      b.innerHTML = '<i style="background:'+grad(SL[j].bg[mode])+'"></i><img src="img2/'+SL[j].fig[mode]+'.webp" alt="">';
+      b.addEventListener('click', function(){ go(j, 1); });
+      thumbs.appendChild(b);
+    });
+  }
+  function go(i, dir){
+    cur = (i+SL.length)%SL.length;
+    paintBackdrop(); paintFigs(dir); paintText(true);
+  }
+  document.getElementById('prev').addEventListener('click', function(){ go(cur-1,-1); });
+  document.getElementById('next').addEventListener('click', function(){ go(cur+1,1); });
+  var stage = document.getElementById('stage'), tx = null;
+  stage.addEventListener('touchstart', function(e){ tx = e.touches[0].clientX; }, {passive:true});
+  stage.addEventListener('touchend', function(e){ if(tx===null) return; var dx = e.changedTouches[0].clientX - tx; if (Math.abs(dx)>50) go(cur+(dx<0?1:-1), dx<0?1:-1); tx=null; });
+
+  function setMode(m){
+    mode = m; root.setAttribute('data-mode', m); store('da-mode', m);
+    paintBackdrop(); paintFigs(0); paintText(false);
+  }
+  document.getElementById('modeBtn').addEventListener('click', function(){ setMode(mode==='night'?'day':'night'); });
+
+  /* ---------- i18n ---------- */
+  var UZ = {
+    nav_bio:'Биография', nav_training:'Таълим', nav_team:'Жамоа', nav_company:'Компания', nav_reg:'Рўйхатдан ўтиш',
+    bio_h:'Қисқача мен ҳақимда', bio_lead:'Сизнинг ўсишингиз — бу қуриш мумкин бўлган йўл.',
+    bio_lbl:'Дильрабо М. — асосчи',
+    bf1:'ФИО', bf2:'Лавозим', bf2v:'Faberlic жамоаси директори', bf3:'Тажриба', bf3v:'9 йил',
+    bf4:'Ютуқлар', bf4a:'Квалификацион бонуслар', bf4b:'Текин саёҳатлар', bf4c:'Шахсий автомобиллар',
+    bf5:'Шахсий муаллифлик иши', bf5v:'Dilrabo Academy тизими ва Diamond Academy ўқув дастури асосчиси',
+    story_tag:'Муаллифлик тизими', story_h:'Салкам 10 йиллик изланиш — битта тизимда',
+    story_p1:'Мен тармоқли бизнесда салкам 10 йиллик тажрибага эга устозман! Ва шу йиллар давомида анча хато ва камчиликларни англаб, бизга берилаётган билимлар етарли эмаслигини тушуниб, ривожланиш ва ўсиш учун жуда кўп ва янги билимларни олдим.',
+    story_p2:'Бу академияда ривожланиш ва даромадга чиқиш учун барча энг муҳим бўлган ўлмас қўлланмалардан тортиб янги, замонавий, ишимизни осонлаштирувчи барча усулларни жамладим.',
+    story_p3:'Агар сиз мен каби умрингизнинг қарийб 10 йилини изланишда ўтказишни истамасангиз ёки жамоангиз бор ва эскирган усуллардан чарчаб, жамоангизни ривожлантириш учун нима қилишни билмаётган бўлсангиз, сизга айнан менинг муаллифлик тизимим керак.',
+    story_free:'Ушбу тизим менинг жамоамда рўйхатдан ўтганлар учун мутлақо текин!',
+    story_p4:'Тизимга кириш учун айнан шу сайт ёки бот орқали рўйхатдан ўтиб, минимал шартларни бажариш керак.',
+    story_p5:'Умрингизни изланишга ўтказмасдан, шу бугун рўйхатдан ўтинг ва бу тизимни қўлга киритинг!',
+    story_btn:'Рўйхатдан ўтиш',
+    who_tag:'Кимлар учун', who_h:'Академия кимлар учун?',
+    who1:'Тармоқли бизнесда малакаси бор, лекин бир нуқтада тўхтаб қолган лидерларга',
+    who2:'Катта жамоаси бор, лекин доим ҳам ўз жамоасига вақт ажрата олмаётганларга',
+    who3:'Жамоани кенгайтириш учун янги, замонавий усулларни излаётганларга',
+    who4:'Қўшимча даромад хоҳлаган ишчи ходимларга',
+    who5:'Талабаларга',
+    who6:'Ёш оналар ва уй бекаларига',
+    who7:'Нолдан янги онлайн соҳа излаётганларга',
+    who_all:'Ушбу яратилган тизим бу соҳада янги бўлганлардан тортиб катта жамоа директорларига ҳам тўғри келади!',
+    bio_q:'«Муваффақият — бу омад эмас. Бу тизим ва ёнингиздаги одамлар»',
+    tr_h:'Биринчи қадамдан лидерликкача', tr_p:'Қисқа дарслар, жонли эфирлар ва текширувли топшириқлар. Сиз ўз суръатингизда ҳаракат қиласиз, устоз эса билимлар ҳаракатга айланишини кузатиб боради.',
+    stg1_n:'1-босқич:', stg2_n:'2-босқич:', stg3_n:'3-босқич:', st1:'Старт', st2:'Ўсиш', st3:'Лидерлик',
+    stg1_p:'Компания ва маҳсулотлар билан танишув, рўйхатдан ўтиш, биринчи буюртмалар ва биринчи мижозлар.',
+    stg2_p:'Ижтимоий тармоқларда шахсий бренд, мижозлар билан ишлаш, ҳамкорларни жамоага таклиф қилиш.',
+    stg3_p:'Устозлик, тузилмани бошқариш, маркетинг-режа ва барқарор даромадга чиқиш.',
+    cert_t4:'ушбу сертификат тасдиқлайдики', cert_t5:'Сизнинг исмингиз', cert_t6:'1-БОСҚИЧ ЯКУНЛАНДИ',
+    cert_e:'Сертификат', cert_h:'Ҳар бир босқич сертификат билан тасдиқланади',
+    cert_p:'Ҳар бир босқичдан сўнг амалий топшириқ топширасиз ва академия директори имзолаган Dilrabo Academy номли сертификатини оласиз.',
+    cert_btn:'Биринчи босқични бошлаш',
+    team_word:'Бизнинг жамоа', team_cap_b:'Биргаликда кучлимиз', team_cap:'Янги бошловчи бўшлиққа эмас, жамоага келади: бу ерда тажриба алмашилади ва бир-бирининг ғалабасидан қувонилади.',
+    crew_tag:'Жамоа юзлари', crew_h:'Биз билан бирга ўсаётган ҳамкорлар', crew_edit:'Исмларни ёзиш', crew_save:'Сақлаш', crew_cancel:'Бекор қилиш',
+    vid_h:'Жонли учрашувлар ва семинарлар', vid_p:'Биз мунтазам равишда жонли учрашамиз: Faberlic семинарлари, таълим ва лидерларни янги ютуқлари билан табриклаш.', vid_btn:'Жамоага қўшилиш',
+    nav_rev:'Фикрлар', rev_h:'Ўқувчилар нима дейди', rev_lead:'Telegram-чатимиздан ҳақиқий хабарлар ва таълимнинг биринчи босқичидан кейин берилган сертификатлар.',
+    rev_cert:'Сертификат · 1-босқич', rev_chat:'Telegram’даги фикр', rev_cta_h:'Кейинги сертификат — сизники', rev_cta_p:'Таълимнинг биринчи босқичидан ўтинг ва Dilrabo Academy сертификатини олинг.', rev_cta_btn:'Таълимга ёзилиш',
+    r1_n:'Устоз:', r1_p:'Шахсий устоз биринчи қадамларда ёрдам беради ва саволларга жавоб беради.',
+    r2_n:'Чат ва эфирлар:', r2_p:'Умумий чатда кундалик кўмак, таҳлиллар ва фойдали материаллар.',
+    r3_n:'Мақсадлар:', r3_v:'Биргаликда', r3_p:'Ойлик мақсад қўямиз ва биргаликда унга интиламиз.',
+    co_h:'Нега мен айнан Faberlic’да?!',
+    f1:'асос солинган йил', f2:'кислородли косметика', f3b:'Ўз', f3:'ишлаб чиқариши',
+    why1:'Кенг ва бой ассортимент',
+    why2:'Аъло сифат',
+    why3:'Ҳамёнбоп нархлар',
+    why4:'Шаффоф маркетинг',
+    why5:'Компания ва раҳбариятнинг қўллаб-қувватлаши',
+    why6:'Маҳсулот етказиш қулайлиги',
+    why7:'Ўзбекистонда расмий ва қонунийлиги',
+    why8:'Компания 29 йилдан буён мустаҳкам ривожланмоқда',
+    why_p:'Қанчалик сиз танлаган компания зўр бўлмасин, сиз танлаган тармоқда мустаҳкам ва мукаммал тизим бўлмаса, натижага эришиш осон бўлмайди! Ушбу тизим ва имкониятлар эса фақат Dilrabo Academy’да!',
+    why_h:'Тўғри танлов — натижа гаровидир!',
+    co_note:'Dilrabo Academy — Faberlic мустақил ҳамкорлари жамоаси бўлиб, компаниянинг расмий ваколатхонаси ҳисобланмайди.',
+    reg_word:'Рўйхатдан ўтиш<br>нима учун керак?',
+    rw1:'Ўзингиз учун шахсий кабинет очиш учун',
+    rw2:'Маҳсулотларни 20% ва 26% чегирмалар билан харид қилиш учун',
+    rw3:'Ойлик даромадга чиқиш учун',
+    rw4:'Академиядан фойдаланиб, ўз жамоангизга уни тақдим этиш учун',
+    reg_h:'Йўлингизни бошлашга тайёрмисиз?', reg_p:'Telegram-бот орқали рўйхатдан ўтинг: бир нечта саволга жавоб беринг, устоз сиз билан шахсан боғланади.',
+    rs1_n:'1-қадам:', rs1_v:'Бот', rs1:'@dilyafl_bot Telegram-ботини очинг.',
+    rs2_n:'2-қадам:', rs2_v:'Сўровнома', rs2:'Бир нечта оддий саволга жавоб беринг.',
+    rs3_n:'3-қадам:', rs3_v:'Устоз', rs3:'Устоз сиз билан боғланади ва биринчи қадамларда ёрдам беради.',
+    reg_free:'Рўйхатдан ўтиш мутлақо текин!',
+    tm_tag:'Шартлар', tm_h:'Академияга кириш шартлари', tm_lead:'Ушбу академияга кириш шартлари минимал:',
+    tm1:'Айнан шу сайт ёки бот орқали менинг жамоамдан рўйхатдан ўтиш', tm1b:'Мутлақо бепул',
+    tm2:'Энг камида 25 балл билан иш бошлаш', tm2p:'Тахминан 400 000 – 600 000 сўм. Аниқ сумма нима харид қилишингизга боғлиқ.',
+    tm_note:'Албатта, жамоамга хоҳлаган сумма билан қўшилиш мумкин — бу шарт фақат академия учун. Иш бошлагач, кейинги буюртмаларда ҳам 25 балл қилиб академияга кираверасиз.',
+    reg_btn:'Telegram орқали рўйхатдан ўтиш', foot:'Faberlic мустақил ҳамкорлари'
+  };
+  var nodes = document.querySelectorAll('[data-i18n]'), RU = {};
+  nodes.forEach(function(n){ var k=n.getAttribute('data-i18n'); if(!(k in RU)) RU[k]=n.innerHTML; });
+  function setLang(l){
+    lang = l; var dict = l==='uz' ? UZ : RU;
+    nodes.forEach(function(n){ var k=n.getAttribute('data-i18n'); if(dict[k]!=null) n.innerHTML = dict[k]; });
+    root.lang = l==='uz' ? 'uz-Cyrl' : 'ru';
+    document.querySelectorAll('.lang button').forEach(function(b){ b.setAttribute('aria-pressed', String(b.dataset.lang===l)); });
+    store('da-lang', l); paintText(false); fitAll();
+  }
+  document.querySelectorAll('.lang button').forEach(function(b){ b.addEventListener('click', function(){ setLang(b.dataset.lang); }); });
+
+  /* ---------- giant words: fit to container width; hero title split into letters ---------- */
+  var mega = document.getElementById('mega');
+  mega.innerHTML = mega.textContent.split('').map(function(c,i){
+    return c===' ' ? '<span class="sp-ch"> </span>' : '<span style="transition-delay:'+(0.15+i*0.045).toFixed(2)+'s">'+c+'</span>';
+  }).join('');
+  function fit(el){
+    el.style.width = ''; el.style.fontSize = '100px';
+    var avail = el.clientWidth;
+    el.style.width = 'max-content';
+    var w = el.getBoundingClientRect().width;
+    el.style.width = '';
+    var size = 100*avail/w*0.995;
+    if (el.dataset.fitMax) size = Math.min(size, el.parentElement.clientHeight*parseFloat(el.dataset.fitMax));
+    if (w && avail) el.style.fontSize = size+'px';
+  }
+  /* team photo: its top edge sits under the lower half of the giant word, so the word covers balloons, not faces */
+  var teamDepth = document.querySelector('#team .depth'), teamCard = teamDepth && teamDepth.querySelector('.cut.card');
+  var teamWord = teamDepth && teamDepth.querySelector('.word'), teamCap = teamDepth && teamDepth.querySelector('.cap');
+  var narrow = window.matchMedia('(max-width:760px)');
+  function placeTeamCard(){
+    if (!teamCard) return;
+    teamDepth.style.height = '';
+    var top = teamWord.offsetTop + teamWord.offsetHeight*.5;
+    teamCard.style.top = top + 'px'; teamCard.style.bottom = 'auto';
+    if (narrow.matches){
+      // phone: the caption goes right under the photo instead of leaving a gap
+      teamCard.style.height = '';
+      teamDepth.style.height = Math.round(top + teamCard.offsetHeight + 44 + teamCap.offsetHeight + 24) + 'px';
+      return;
+    }
+    // desktop: as big as possible, but never under the caption in the bottom-left corner
+    var W = teamDepth.clientWidth, H = teamDepth.clientHeight, full = H - top - H*.05;
+    var byWidth = (W - 2*(teamCap.offsetLeft + teamCap.offsetWidth + 24)) / 1.5, byHeight = teamCap.offsetTop - top - 24;
+    teamCard.style.height = Math.max(260, byWidth >= full ? full : Math.min(full, Math.max(byWidth, byHeight))) + 'px';
+  }
+  function fitAll(){ document.querySelectorAll('[data-fit]').forEach(fit); placeTeamCard(); }
+
+  /* ---------- preloader: real image/font progress, minimum 1.3s ---------- */
+  var lbar = document.getElementById('lbar'), lpct = document.getElementById('lpct');
+  var critical = Array.prototype.slice.call(document.querySelectorAll('#figs img, .p-sketch img'));
+  var total = critical.length + 1, done = 0, shown = 0, t0 = performance.now(), finished = false;
+  function bump(){ done++; }
+  critical.forEach(function(img){ if (img.complete) bump(); else { img.addEventListener('load', bump); img.addEventListener('error', bump); } });
+  (document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve()).then(function(){ bump(); fitAll(); });
+  function finish(){
+    if (finished) return; finished = true;
+    lbar.style.setProperty('--lp', 1); lpct.textContent = '100%';
+    fitAll(); root.classList.remove('preload'); root.classList.add('ready');
+    setTimeout(fitAll, 1300);
+  }
+  (function loop(){
+    if (finished) return;
+    var target = Math.min(done/total, Math.min(1,(performance.now()-t0)/1300));
+    shown += (target - shown) * 0.12; if (target===1 && shown>0.99) shown = 1;
+    lbar.style.setProperty('--lp', shown.toFixed(3)); lpct.textContent = Math.round(shown*100)+'%';
+    if (shown < 1 && !reduce) requestAnimationFrame(loop); else finish();
+  })();
+  setTimeout(finish, 6000);
+
+  /* first paint of slide state */
+  bdLayers[0].style.background = grad(SL[0].bg[mode]); bdLayers[0].classList.add('on');
+  paintFigs(0);
+  if (store('da-lang')==='uz') setLang('uz'); else paintText(false);
+
+  /* ---------- scroll reveal ---------- */
+  document.querySelectorAll('[data-stagger]').forEach(function(g){
+    g.querySelectorAll('[data-r]').forEach(function(el,i){ el.style.setProperty('--d', (i*0.1)+'s'); });
+  });
+  var rev = document.querySelectorAll('[data-r], .meter');
+  function count(el){
+    var to = +el.dataset.count, from = Math.round(to*0.9), s = null;
+    requestAnimationFrame(function step(t){ if(s===null) s=t; var p=Math.min(1,(t-s)/1500), e=1-Math.pow(1-p,3); el.textContent = Math.round(from+(to-from)*e); if(p<1) requestAnimationFrame(step); });
+  }
+  if ('IntersectionObserver' in window && !reduce){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); var c = e.target.querySelector('[data-count]'); if (c) count(c); } });
+    }, {rootMargin:'0px 0px -8% 0px'});
+    rev.forEach(function(el){ io.observe(el); });
+  } else rev.forEach(function(el){ el.classList.add('in'); });
+
+  /* ---------- scroll-linked: header, hero depth parallax, depth blocks, wipes, active link ---------- */
+  var hdr = document.getElementById('hdr'), figsBox = document.getElementById('figs');
+  var depths = document.querySelectorAll('[data-depth]'), wipes = document.querySelectorAll('[data-wipe]');
+  var links = document.querySelectorAll('.nav-pill a[href^="#"]');
+  var ticking = false;
+  function onScroll(){
+    if (ticking) return; ticking = true;
+    requestAnimationFrame(function(){
+      ticking = false;
+      var sy = window.scrollY, vh = window.innerHeight;
+      hdr.classList.toggle('scrolled', sy > 40);
+      if (!reduce && sy < vh*1.3){
+        mega.style.transform = 'translateY('+(sy*0.35)+'px)';
+        figsBox.style.transform = 'translateY('+(sy*0.12)+'px)';
+      }
+      depths.forEach(function(d){
+        var r = d.getBoundingClientRect(); if (r.bottom < 0 || r.top > vh || reduce) return;
+        var p = (vh - r.top)/(vh + r.height);
+        d.querySelector('.word').style.transform = 'translateY('+((p-.5)*-140)+'px)';
+        d.querySelector('.cut').style.transform = 'translateX(-50%) translateY('+((p-.5)*40)+'px)';
+      });
+      wipes.forEach(function(w){
+        var r = w.getBoundingClientRect();
+        var p = Math.min(1, Math.max(0, (vh*0.9 - r.top)/(r.height*0.85)));
+        w.style.setProperty('--p', reduce ? 1 : p.toFixed(3));
+      });
+      var curId = null;
+      ['bio','training','team','company'].forEach(function(id){ var r = document.getElementById(id).getBoundingClientRect(); if (r.top < vh*0.45 && r.bottom > vh*0.45) curId = id; });
+      links.forEach(function(a){ a.classList.toggle('active', a.getAttribute('href')==='#'+curId); });
+    });
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  window.addEventListener('resize', function(){ fitAll(); onScroll(); });
+
+  /* ---------- mobile menu ---------- */
+  var burger = document.getElementById('burger'), mnav = document.getElementById('mnav');
+  burger.addEventListener('click', function(){ var o = mnav.classList.toggle('open'); burger.setAttribute('aria-expanded', String(o)); });
+  mnav.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ mnav.classList.remove('open'); burger.setAttribute('aria-expanded','false'); }); });
+
+  /* ---------- our team: names live in the artifact db; only editors see the edit controls ---------- */
+  var CREW_DEFAULT = {};  // names for a standalone copy of the site, e.g. {t1:'Имя Фамилия'}
+  var CREW_TXT = {
+    ru:{ph:'Имя и фамилия', saving:'Сохраняю…', saved:'Имена сохранены', fail:'Не удалось сохранить. Попробуйте ещё раз.'},
+    uz:{ph:'Исм ва фамилия', saving:'Сақланмоқда…', saved:'Исмлар сақланди', fail:'Сақлаб бўлмади. Яна уриниб кўринг.'}
+  };
+  var crewLis = document.querySelectorAll('#crew li'), crewNames = Object.assign({}, CREW_DEFAULT);
+  var crewTools = document.getElementById('crewTools'), crewMsg = document.getElementById('crewMsg');
+  var bEdit = document.getElementById('crewEdit'), bSave = document.getElementById('crewSave'), bCancel = document.getElementById('crewCancel');
+  var crewDoc = null, editing = false, saving = false;
+  function crewRender(){
+    crewLis.forEach(function(li){
+      var n = String(crewNames[li.dataset.id] || ''), slot = li.querySelector('.nm, .nm-in');
+      var b = document.createElement('b'); b.className = 'nm'; b.textContent = n;
+      slot.replaceWith(b); li.querySelector('img').alt = n;
+    });
+  }
+  function crewMode(on){
+    editing = on; bEdit.hidden = on; bSave.hidden = !on; bCancel.hidden = !on;
+    if (!on){ crewRender(); return; }
+    crewMsg.textContent = '';
+    crewLis.forEach(function(li){
+      var inp = document.createElement('input');
+      inp.className = 'nm-in'; inp.type = 'text'; inp.maxLength = 60;
+      inp.value = crewNames[li.dataset.id] || ''; inp.placeholder = CREW_TXT[lang].ph;
+      inp.setAttribute('aria-label', CREW_TXT[lang].ph);
+      inp.addEventListener('keydown', function(e){ if (e.key==='Enter') crewSave(); if (e.key==='Escape') crewMode(false); });
+      li.querySelector('.nm').replaceWith(inp);
+    });
+    crewLis[0].querySelector('input').focus();
+  }
+  function crewSave(){
+    if (saving || !crewDoc) return;
+    var next = {};
+    crewLis.forEach(function(li){ var v = li.querySelector('.nm-in').value.replace(/\s+/g,' ').trim(); if (v) next[li.dataset.id] = v; });
+    saving = true; bSave.disabled = true; crewMsg.textContent = CREW_TXT[lang].saving;
+    crewDoc.set({names: next}).then(function(){
+      crewNames = Object.assign({}, CREW_DEFAULT, next); crewMode(false); crewMsg.textContent = CREW_TXT[lang].saved;
+    }, function(){ crewMsg.textContent = CREW_TXT[lang].fail; })
+    .then(function(){ saving = false; bSave.disabled = false; });
+  }
+  bEdit.addEventListener('click', function(){ crewMode(true); });
+  bSave.addEventListener('click', crewSave);
+  bCancel.addEventListener('click', function(){ crewMode(false); });
+  crewRender();
+  if (window.claude && typeof window.claude.use === 'function'){
+    Promise.all([window.claude.use('db'), window.claude.use('user')]).then(function(r){
+      var db = r[0], user = r[1];
+      if (!db) return;
+      crewDoc = db.doc('data/team/names/all');
+      crewDoc.onSnapshot(function(snap){
+        var d = snap.exists ? snap.data() : null;
+        crewNames = Object.assign({}, CREW_DEFAULT, (d && d.names) || {});
+        if (!editing) crewRender();
+      }, function(){});
+      if (user) user.canEdit().then(function(ok){ if (ok) crewTools.hidden = false; });
+    }, function(){});
+  }
+
+  /* ---------- seminar video: plays while visible, sound on demand ---------- */
+  var vidBox = document.getElementById('vid'), video = vidBox.querySelector('video'), vidSound = document.getElementById('vidSound');
+  vidSound.addEventListener('click', function(){
+    video.muted = !video.muted; vidBox.classList.toggle('sound', !video.muted);
+    vidSound.setAttribute('aria-pressed', String(!video.muted));
+    if (video.paused) video.play().catch(function(){});
+  });
+  if ('IntersectionObserver' in window){
+    new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if (e.isIntersecting){ if (!reduce || !video.muted) video.play().catch(function(){}); }
+        else video.pause();
+      });
+    }, {threshold:.35}).observe(video);
+  }
+
+  /* ---------- reviews: tap a screenshot or certificate to see it larger ---------- */
+  var lb = document.getElementById('lb'), lbImg = lb.querySelector('img');
+  document.querySelectorAll('[data-zoom]').forEach(function(b){
+    b.addEventListener('click', function(){
+      var i = b.querySelector('img');
+      lbImg.src = i.currentSrc || i.src; lbImg.alt = i.alt;
+      lbImg.style.width = Math.min(window.innerWidth*.92, (i.naturalWidth || 400)*1.6) + 'px';
+      if (lb.showModal) lb.showModal();
+    });
+  });
+  lb.addEventListener('click', function(){ lb.close(); });
+
+  /* ---------- marquee loop ---------- */
+  var track = document.getElementById('track'); track.innerHTML += track.innerHTML;
+
+  fitAll(); onScroll();
+})();
+</script>
+</body>
+</html>
